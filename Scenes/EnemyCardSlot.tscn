@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwdrmgpmoed3t"]
+
+[ext_resource type="Script" uid="uid://bw6exmt0t1cvg" path="res://Scripts/MemeCardSlot.gd" id="1_338b4"]
+[ext_resource type="Texture2D" uid="uid://dhjvi4gym3l43" path="res://Assets/card slot.png" id="2_pa7lj"]
+
+[node name="CardSlot" type="Node2D"]
+position = Vector2(176, 379)
+script = ExtResource("1_338b4")
+
+[node name="CardSlotImage" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_pa7lj")

@@ -3,8 +3,8 @@ extends Node2D
 const COLLISON_MASK_CARD = 1
 const COLLISON_MASK_CARD_SLOT = 2
 const DEFAULT_CARD_MOVE_SPEED = 0.1
-const DEFAULT_CARD_SCALE = 0.8
-const CARD_BIGGER_SCALE = 0.85
+const DEFAULT_CARD_SCALE = 0.9
+const CARD_BIGGER_SCALE = 0.95
 const CARD_SMALLER_SCALE = 0.6
 
 var cardScaleSize = 1.1
@@ -58,6 +58,7 @@ func finish_drag():
 				isCardBeingDragged.position = card_slot_found.position
 				isCardBeingDragged.get_node("Area2D/CollisionShape2D").disabled = true
 				card_slot_found.card_in_slot = true
+				$"../BattleManager".p1_cards_on_field.append(isCardBeingDragged)
 				isCardBeingDragged = null
 				return
 	player_hand_reference.add_card_to_hand(isCardBeingDragged, DEFAULT_CARD_MOVE_SPEED)
@@ -135,3 +136,6 @@ func get_card_with_highest_z_index(cards):
 			highest_z_card = current_card
 			highest_z_index = current_card.z_index
 	return highest_z_card
+
+func reset_played_monster():
+	played_monster_card_this_turn = false

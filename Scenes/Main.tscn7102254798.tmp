@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://csdn3hejxv31s"]
+[gd_scene load_steps=14 format=3 uid="uid://csdn3hejxv31s"]
 
 [ext_resource type="Script" uid="uid://cl3guivkmrlrj" path="res://Scripts/CardManager.gd" id="1_fpxkf"]
 [ext_resource type="PackedScene" uid="uid://bxbws8k83m3i6" path="res://Scenes/CardSlot.tscn" id="2_jtm87"]
@@ -12,7 +12,6 @@
 [ext_resource type="FontFile" uid="uid://5nre14wk75bi" path="res://Fonts/UncialAntiqua-Regular.ttf" id="7_s822w"]
 [ext_resource type="Script" uid="uid://bpujf30bbshpo" path="res://Scripts/BattleManager.gd" id="10_bmxlf"]
 [ext_resource type="Script" uid="uid://cia7b34hmoy7j" path="res://Scripts/P2Deck.gd" id="11_frkhe"]
-[ext_resource type="Texture2D" uid="uid://dhjvi4gym3l43" path="res://Assets/card slot.png" id="13_frkhe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_igh27"]
 size = Vector2(149, 209)
@@ -156,39 +155,5 @@ texture = ExtResource("5_trwjj")
 script = ExtResource("10_bmxlf")
 
 [node name="BattleTimer" type="Timer" parent="."]
-
-[node name="P1hp" type="RichTextLabel" parent="."]
-offset_left = 216.0
-offset_top = 490.0
-offset_right = 342.0
-offset_bottom = 599.0
-theme_override_fonts/normal_font = ExtResource("7_s822w")
-theme_override_font_sizes/normal_font_size = 80
-text = "0"
-
-[node name="P2hp" type="RichTextLabel" parent="."]
-offset_left = 216.0
-offset_top = 343.0
-offset_right = 342.0
-offset_bottom = 452.0
-theme_override_fonts/normal_font = ExtResource("7_s822w")
-theme_override_font_sizes/normal_font_size = 80
-text = "0"
-
-[node name="P1Grave" type="Node2D" parent="."]
-position = Vector2(1393, 633)
-scale = Vector2(0.6, 0.6)
-
-[node name="Sprite2D" type="Sprite2D" parent="P1Grave"]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("13_frkhe")
-
-[node name="P2Grave" type="Node2D" parent="."]
-position = Vector2(540, 342)
-scale = Vector2(0.6, 0.6)
-
-[node name="Sprite2D" type="Sprite2D" parent="P2Grave"]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("13_frkhe")
 
 [connection signal="pressed" from="EndTurnButton" to="BattleManager" method="_on_end_turn_button_pressed"]
